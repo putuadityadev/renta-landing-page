@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Car, Bike, Users, Globe, Bell, CheckCircle } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Component() {
   return (
@@ -12,8 +13,13 @@ export default function Component() {
       {/* Header */}
       <header className="px-4 lg:px-6 h-16 flex items-center border-b bg-white/80 backdrop-blur-sm">
         <div className="flex items-center space-x-2">
-          <div className="flex items-center justify-center w-8 h-8 rounded-lg" style={{ backgroundColor: "#3674b5" }}>
-            <Car className="h-5 w-5 text-white" />
+          <div className="flex items-center justify-center w-8 h-8 rounded-lg" style={{ backgroundColor: "#fff" }}>
+            <Image 
+              src={'/renta.png'}
+              alt="renta"
+              width={24}
+              height={24}
+            />
           </div>
           <span className="text-xl font-bold text-slate-900">rentarenta.id</span>
         </div>
@@ -337,9 +343,28 @@ export default function Component() {
               </div>
               <span className="font-semibold text-slate-900">rentarenta.id</span>
             </div>
-            <p className="text-sm text-slate-600">
-              © 2025 rentarenta.id. All rights reserved. Coming soon to transform rental businesses across Indonesia.
-            </p>
+            
+            {/* Contact Information - WhatsApp */}
+            <div className="flex flex-col items-center space-y-2">
+              <p className="text-sm text-slate-600">
+                © 2025 rentarenta.id. All rights reserved. Coming soon to transform rental businesses across Indonesia.
+              </p>
+              <div className="flex items-center space-x-2">
+                <span className="text-sm text-slate-600">Hubungi kami:</span>
+                <a 
+                  href="https://wa.me/6281330670747" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium transition-colors"
+                  style={{ color: "#25D366" }}
+                  onMouseEnter={(e) => (e.target.style.color = "#128C7E")}
+                  onMouseLeave={(e) => (e.target.style.color = "#25D366")}
+                >
+                  📱 +62 813-3067-0747 (WhatsApp)
+                </a>
+              </div>
+            </div>
+            
             <div className="flex space-x-4">
               <Link
                 href="#"
